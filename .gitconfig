@@ -3,12 +3,11 @@
   email = rudeigerc@gmail.com
   signingkey = 7CAD10ACC912857F
 [core]
-  editor = lvim
-  excludesfile = /Users/rudeigerc/.gitignore_global
+  editor = nvim
 [gpg]
   program = /usr/local/bin/gpg
 [commit]
-  gpgSign = true
+	gpgsign = true
 [init]
   defaultBranch = main
 [alias]
