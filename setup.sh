@@ -13,11 +13,12 @@ FILES=(
     .config/starship.toml
     .gnupg/gpg-agent.conf
     .SpaceVim.d/init.toml
+    .aliases
     .gitconfig
     .kubectl_aliases
     .npmrc
     .tmux.conf
-    # .zshrc
+    .zshrc
 )
 
 for FILE in "${FILES[@]}"; do
@@ -27,6 +28,7 @@ done
 echo "setup.sh: Setting up symbolic links for directories"
 
 DIRS=(
+    .config/bat
     .config/git
     .config/pip
     .config/wezterm
