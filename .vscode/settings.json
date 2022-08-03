@@ -2,5 +2,11 @@
     "files.associations": {
         "ignore": "gitignore",
         ".aliases": "shellscript"
+    },
+    "Lua.diagnostics.globals": [
+        "vim"
+    ],
+    "[lua]": {
+        "editor.formatOnSave": true
     }
 }

@@ -9,18 +9,26 @@ source $ZNAP/zsh-snap/znap.zsh
 znap eval starship "starship init zsh --print-full-init"
 znap prompt
 
+znap source ohmyzsh/ohmyzsh lib/{directories,theme-and-appearance} plugins/{git,brew,common-aliases,history,python,pip,github,man,xcode,colored-man-pages}
+
 znap source agkozak/zsh-z
 znap source marlonrichert/zcolors
-znap source ohmyzsh/ohmyzsh lib/{directories,theme-and-appearance} plugins/{git,brew,common-aliases,history,python,pip,github,man,xcode,colored-man-pages}
+znap source MohamedElashri/exa-zsh
 znap source zdharma-continuum/fast-syntax-highlighting
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-completions
 
 znap eval zcolors "zcolors ${(q)LS_COLORS}"
 
+export LANG=en_US.UTF-8
+
 [ -f $HOME/.aliases ] && source $HOME/.aliases
 
 [ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
+
+# for script in $(find scripts -type f); do
+#   source $script
+# done
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -48,7 +56,6 @@ export PATH="$(brew --prefix)/opt/python@3.10/libexec/bin:$PATH"
 # kubernetes
 export KUBE_EDITOR="nvim"
 export PATH="${PATH}:${HOME}/.krew/bin"
-source <(kubectl krew completion zsh)
 
 # GNU command line tools
 export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
@@ -104,3 +111,6 @@ export FZF_DEFAULT_OPTS='
   --color fg:#D8DEE9,bg:#2E3440,hl:#A3BE8C,fg+:#D8DEE9,bg+:#434C5E,hl+:#A3BE8C
   --color pointer:#BF616A,info:#4C566A,spinner:#4C566A,header:#4C566A,prompt:#81A1C1,marker:#EBCB8B
 '
+
+znap function _pip_completion pip 'eval "$( pip completion --zsh )"'
+compctl -K _pip_completion pip

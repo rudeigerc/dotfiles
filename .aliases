@@ -3,8 +3,10 @@ alias zshconfig="vim ~/.zshrc"
 alias dotfiles="code $HOME/Developer/dotfiles"
 
 # system commands
+unalias -m ls
 alias ls="exa --icons"
 alias top="btop"
+alias cat="bat -pp"
 
 alias copypath="pwd | tr -d '\n' | pbcopy"
 
