@@ -45,4 +45,15 @@ for DIR in "${DIRS[@]}"; do
 done
 
 echo
+echo "setup.sh: Setting up symbolic links for Xcode"
+
+XCODE_USERDATA="$HOME/Library/Developer/Xcode/UserData"
+
+if [[ -f $XCODE_USERDATA ]]; then
+    mkdir -p "$XCODE_USERDATA"
+fi
+
+ln -sfvn "$DOTFILES_DIR/themes/xcode" "$XCODE_USERDATA/FontAndColorThemes"
+
+echo
 echo "setup.sh: Done"
