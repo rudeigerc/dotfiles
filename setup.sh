@@ -49,7 +49,7 @@ echo "setup.sh: Setting up symbolic links for Xcode"
 
 XCODE_USERDATA="$HOME/Library/Developer/Xcode/UserData"
 
-if [[ -f $XCODE_USERDATA ]]; then
+if ! [[ -d $XCODE_USERDATA ]]; then
     mkdir -p "$XCODE_USERDATA"
 fi
 
