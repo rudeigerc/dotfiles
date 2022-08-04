@@ -13,6 +13,7 @@ FILES=(
     .config/containers/registries.conf
     .config/gh/config.yml
     .config/starship.toml
+    .config/tmux/tmux.conf
     .gnupg/gpg-agent.conf
     .hammerspoon/init.lua
     .m2/settings.xml
@@ -20,7 +21,6 @@ FILES=(
     .gitconfig
     .kubectl_aliases
     .npmrc
-    .tmux.conf
     .zshrc
 )
 

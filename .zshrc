@@ -20,7 +20,11 @@ znap source zsh-users/zsh-completions
 
 znap eval zcolors "zcolors ${(q)LS_COLORS}"
 
+export TPM_HOME="$HOME/.config/tmux/plugins/tpm"
+[[ -f $TPM_HOME/tpm ]] || git clone --depth 1 -- https://github.com/tmux-plugins/tpm $TPM_HOME
+
 export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 [ -f $HOME/.aliases ] && source $HOME/.aliases
 
