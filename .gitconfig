@@ -4,6 +4,7 @@
 	signingkey = 7CAD10ACC912857F
 [core]
 	editor = nvim
+	pager = less -R
 [gpg]
 	program = /usr/local/bin/gpg
 [commit]
