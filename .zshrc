@@ -40,6 +40,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.sjtug.sjtu.edu.cn/homebrew-bottles/bottles
 
+# neovim
+export NVIM_DATA_HOME="$HOME/.local/share/nvim"
+
 # go
 export GO111MODULE=on
 export GOROOT="$(brew --prefix)/opt/go/libexec"

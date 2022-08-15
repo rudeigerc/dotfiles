@@ -34,6 +34,7 @@ echo "setup.sh: Setting up symbolic links for directories"
 DIRS=(
     .config/bat
     .config/git
+    .config/nvim
     .config/pip
     .config/stylua
     .config/wezterm
