@@ -1,5 +1,5 @@
 require('nvim-treesitter.configs').setup({
-    ensure_installed = { 'lua', 'go', 'python', 'markdown' },
+    ensure_installed = { 'lua', 'json', 'go', 'python', 'markdown', 'beancount' },
     highlight = {
         enable = true,
     },
@@ -15,3 +15,6 @@ require('nvim-treesitter.configs').setup({
         enable = true,
     },
 })
+
+local ft_to_parser = require('nvim-treesitter.parsers').filetype_to_parsername
+ft_to_parser.envd = 'python'

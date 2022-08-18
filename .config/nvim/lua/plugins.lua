@@ -7,21 +7,18 @@ if fn.empty(fn.glob(install_path)) > 0 then
     vim.cmd([[packadd packer.nvim]])
 end
 
-vim.cmd([[
-    augroup packer_user_config
-        autocmd!
-        autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-    augroup end
-]])
-
 return require('packer').startup({
     config = {
         compile_path = compile_path,
+        display = {
+            open_fn = require('packer.util').float,
+        },
     },
     function(use)
-        use({
-            'wbthomason/packer.nvim',
-        })
+        use('wbthomason/packer.nvim')
+
+        -- performance
+        use('lewis6991/impatient.nvim')
 
         -- theme
         use({
@@ -31,6 +28,16 @@ return require('packer').startup({
             end,
         })
 
+        -- start screen
+        use({
+            'goolord/alpha-nvim',
+            requires = { 'kyazdani42/nvim-web-devicons' },
+            config = function()
+                require('config.alpha')
+            end,
+        })
+
+        -- buffer
         use({
             'akinsho/bufferline.nvim',
             tag = 'v2.*',
@@ -40,6 +47,7 @@ return require('packer').startup({
             end,
         })
 
+        -- statusline
         use({
             'nvim-lualine/lualine.nvim',
             after = 'github-nvim-theme',
@@ -49,16 +57,29 @@ return require('packer').startup({
             end,
         })
 
+        -- file tree
         use({
-            'kyazdani42/nvim-tree.lua',
+            'nvim-neo-tree/neo-tree.nvim',
+            branch = 'v2.x',
             requires = {
+                'nvim-lua/plenary.nvim',
                 'kyazdani42/nvim-web-devicons',
+                'MunifTanjim/nui.nvim',
             },
             config = function()
                 require('config.tree')
             end,
         })
 
+        -- outline
+        use({
+            'stevearc/aerial.nvim',
+            config = function()
+                require('config.aerial')
+            end,
+        })
+
+        -- editor
         use({
             'lukas-reineke/indent-blankline.nvim',
             config = function()
@@ -68,14 +89,26 @@ return require('packer').startup({
 
         -- fuzzy finder
         use({
-            'nvim-telescope/telescope.nvim',
-            tag = '0.1.0',
-            requires = { { 'nvim-lua/plenary.nvim' } },
-            config = function()
-                require('config.telescope')
-            end,
+            {
+                'nvim-telescope/telescope.nvim',
+                tag = '0.1.0',
+                requires = {
+                    'nvim-lua/plenary.nvim',
+                    'nvim-telescope/telescope-github.nvim',
+                    'nvim-telescope/telescope-ui-select.nvim',
+                    'nvim-telescope/telescope-fzf-native.nvim',
+                },
+                config = function()
+                    require('config.telescope')
+                end,
+            },
+            {
+                'nvim-telescope/telescope-fzf-native.nvim',
+                run = 'make',
+            },
         })
 
+        -- highlighting
         use({
             'nvim-treesitter/nvim-treesitter',
             requires = {
@@ -92,6 +125,7 @@ return require('packer').startup({
             end,
         })
 
+        -- auto completion
         use({
             'hrsh7th/nvim-cmp',
             requires = {
@@ -110,12 +144,43 @@ return require('packer').startup({
             end,
         })
 
+        -- lsp
         use({
-            'neovim/nvim-lspconfig',
-            'folke/trouble.nvim',
+            {
+                'neovim/nvim-lspconfig',
+                after = 'cmp-nvim-lsp',
+                config = function()
+                    require('config.lsp')
+                end,
+            },
+            {
+                'williamboman/mason.nvim',
+                config = function()
+                    require('config.mason')
+                end,
+            },
+            {
+                'williamboman/mason-lspconfig.nvim',
+                config = function()
+                    require('config.mason-lspconfig')
+                end,
+            },
+            {
+                'folke/trouble.nvim',
+                config = function()
+                    require('config.trouble')
+                end,
+            },
             'ray-x/lsp_signature.nvim',
         })
 
+        -- linter
+        use({
+            'jose-elias-alvarez/null-ls.nvim',
+            requires = { 'nvim-lua/plenary.nvim' },
+        })
+
+        -- copilot
         use({
             'github/copilot.vim',
             setup = function()
@@ -127,17 +192,22 @@ return require('packer').startup({
 
         -- git
         use({
-            'lewis6991/gitsigns.nvim',
-            requires = { 'nvim-lua/plenary.nvim' },
-            config = function()
-                require('config.gitsigns')
-            end,
+            {
+                'lewis6991/gitsigns.nvim',
+                requires = { 'nvim-lua/plenary.nvim' },
+                config = function()
+                    require('config.gitsigns')
+                end,
+            },
+            {
+                'TimUntersberger/neogit',
+                config = function()
+                    require('config.gitsigns')
+                end,
+            },
         })
 
-        use({
-            'airblade/vim-gitgutter',
-        })
-
+        -- key bindings
         use({
             'folke/which-key.nvim',
             config = function()
@@ -145,7 +215,32 @@ return require('packer').startup({
             end,
         })
 
+        -- UI
         use('stevearc/dressing.nvim')
-        use('rcarriga/nvim-notify')
+
+        -- notification
+        use({
+            'rcarriga/nvim-notify',
+            config = function()
+                require('config.notify')
+            end,
+        })
+
+        -- terminal
+        use({
+            'akinsho/toggleterm.nvim',
+            tag = 'v2.*',
+            config = function()
+                require('config.toggleterm')
+            end,
+        })
+
+        -- comment
+        use({
+            'numToStr/Comment.nvim',
+            config = function()
+                require('config.comment')
+            end,
+        })
     end,
 })
