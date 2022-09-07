@@ -4,7 +4,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local lspconfig = require('lspconfig')
-local util = require('lspconfig/util')
+local util = require('lspconfig.util')
 
 -- https://github.com/neovim/nvim-lspconfig#suggested-configuration
 -- Mappings.
@@ -39,6 +39,8 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
     vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+
+    require('aerial').on_attach(client, bufnr)
 end
 
 -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#custom-configuration
@@ -93,3 +95,19 @@ lspconfig.sumneko_lua.setup({
     },
     capabilities = capabilities,
 })
+
+-- local configs = require('lspconfig.configs')
+-- configs.envdlsp = {
+--     default_config = {
+--         cmd = { 'envd-lsp' },
+--         filtypes = { 'envd' },
+--         root_dir = util.find_git_ancestor,
+--         single_file_support = true,
+--         settings = {},
+--     },
+-- }
+
+-- lspconfig.envdlsp.setup({
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+-- })

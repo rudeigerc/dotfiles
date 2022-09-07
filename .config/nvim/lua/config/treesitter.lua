@@ -1,5 +1,16 @@
 require('nvim-treesitter.configs').setup({
-    ensure_installed = { 'lua', 'json', 'go', 'python', 'markdown', 'beancount' },
+    ensure_installed = {
+        'lua',
+        'json',
+        'go',
+        'python',
+        'markdown',
+        'beancount',
+        'comment',
+        'gitignore',
+        'toml',
+        'yaml',
+    },
     highlight = {
         enable = true,
     },
