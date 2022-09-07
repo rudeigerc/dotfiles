@@ -1,7 +1,7 @@
 {
     "files.associations": {
         "ignore": "gitignore",
-        ".aliases": "shellscript"
+        ".zsh_aliases": "shellscript"
     },
     "Lua.diagnostics.globals": [
         "vim"

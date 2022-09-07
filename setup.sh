@@ -17,10 +17,10 @@ FILES=(
     .gnupg/gpg-agent.conf
     .hammerspoon/init.lua
     .m2/settings.xml
-    .aliases
     .gitconfig
     .kubectl_aliases
     .npmrc
+    .zsh_aliases
     .zshrc
 )
 
@@ -38,7 +38,6 @@ DIRS=(
     .config/pip
     .config/stylua
     .config/wezterm
-    .SpaceVim.d
 )
 
 for DIR in "${DIRS[@]}"; do

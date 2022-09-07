@@ -14,6 +14,7 @@ znap source ohmyzsh/ohmyzsh lib/{directories,theme-and-appearance} plugins/{git,
 znap source agkozak/zsh-z
 znap source marlonrichert/zcolors
 znap source MohamedElashri/exa-zsh
+znap source rudeigerc/znotify
 znap source zdharma-continuum/fast-syntax-highlighting
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-completions
@@ -26,13 +27,9 @@ export TPM_HOME="$HOME/.config/tmux/plugins/tpm"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-[ -f $HOME/.aliases ] && source $HOME/.aliases
+[ -f $HOME/.zsh_aliases ] && source $HOME/.zsh_aliases
 
 [ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
-
-# for script in $(find scripts -type f); do
-#   source $script
-# done
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -56,9 +53,6 @@ export JAVA_HOME="$(brew --prefix)/opt/openjdk/libexec/openjdk.jdk/Contents/Home
 
 # openstackclient
 export OS_CLOUD=openstack
-
-# python
-export PATH="$(brew --prefix)/opt/python@3.10/libexec/bin:$PATH"
 
 # kubernetes
 export KUBE_EDITOR="nvim"
@@ -87,19 +81,12 @@ export PATH="$(brew --prefix)/opt/riscv-gnu-toolchain/bin:$PATH"
 export FLINK_HOME="$(brew --prefix)/opt/apache-flink/libexec"
 export PATH="$FLINK_HOME/bin:$PATH"
 
-# plum
-export PATH="$HOME/Developer/plum:$PATH"
-
 # haskell
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
 # argo
 source <(argo completion zsh)
 source <(argocd completion zsh)
-
-# beancount
-export BEANCOUNT_HOME="$HOME/Documents/beancount"
-alias bean="code $BEANCOUNT_HOME"
 
 # wezterm
 export PATH="/Applications/WezTerm.app/Contents/MacOS:$PATH"
