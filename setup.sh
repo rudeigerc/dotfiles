@@ -34,6 +34,7 @@ echo "setup.sh: Setting up symbolic links for directories"
 DIRS=(
     .config/bat
     .config/git
+    .config/karabiner/assets/complex_modifications
     .config/nvim
     .config/pip
     .config/stylua
@@ -41,7 +42,7 @@ DIRS=(
 )
 
 for DIR in "${DIRS[@]}"; do
-    ln -sfvn "$DOTFILES_DIR/$DIR" "$HOME/$DIR";
+    ln -sfvn "$DOTFILES_DIR/$DIR" "$HOME/$DIR"
 done
 
 echo

@@ -67,7 +67,6 @@ export PATH="$(brew --prefix)/opt/ed/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix)/opt/gnu-tar/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix)/opt/make/libexec/gnubin:$PATH"
 
-# gnutls
 export GUILE_TLS_CERTIFICATE_DIRECTORY="$(brew --prefix)/etc/gnutls/etc/gnutls"
 
 # gcloud
@@ -88,12 +87,6 @@ export PATH="$FLINK_HOME/bin:$PATH"
 source <(argo completion zsh)
 source <(argocd completion zsh)
 
-# wezterm
-export PATH="/Applications/WezTerm.app/Contents/MacOS:$PATH"
-
-# surge
-export PATH="/Applications/Surge.app/Contents/Applications:$PATH"
-
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
@@ -105,6 +98,15 @@ export FZF_DEFAULT_OPTS='
   --color fg:#D8DEE9,bg:#2E3440,hl:#A3BE8C,fg+:#D8DEE9,bg+:#434C5E,hl+:#A3BE8C
   --color pointer:#BF616A,info:#4C566A,spinner:#4C566A,header:#4C566A,prompt:#81A1C1,marker:#EBCB8B
 '
+
+# wezterm
+export PATH="/Applications/WezTerm.app/Contents/MacOS:$PATH"
+
+# surge
+export PATH="/Applications/Surge.app/Contents/Applications:$PATH"
+
+# Squirrel
+export PATH="/Library/Input Methods/Squirrel.app/Contents/MacOS:$PATH"
 
 znap function _pip_completion pip 'eval "$( pip completion --zsh )"'
 compctl -K _pip_completion pip
