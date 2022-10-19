@@ -10,3 +10,6 @@ disabled = true
 
 [openstack]
 disabled = true
+
+[kubernetes]
+disabled = false

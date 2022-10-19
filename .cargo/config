@@ -1,7 +1,10 @@
 [source]
 
-[source.mirror]
+[source.sjtug]
 registry = "https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index/"
 
+[source.ustc]
+registry = "https://mirrors.ustc.edu.cn/crates.io-index"
+
 [source.crates-io]
-replace-with = "mirror"
+replace-with = "ustc"
