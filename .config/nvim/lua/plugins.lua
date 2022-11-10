@@ -147,13 +147,6 @@ return require('packer').startup({
         -- lsp
         use({
             {
-                'neovim/nvim-lspconfig',
-                after = 'cmp-nvim-lsp',
-                config = function()
-                    require('config.lsp')
-                end,
-            },
-            {
                 'williamboman/mason.nvim',
                 config = function()
                     require('config.mason')
@@ -163,6 +156,13 @@ return require('packer').startup({
                 'williamboman/mason-lspconfig.nvim',
                 config = function()
                     require('config.mason-lspconfig')
+                end,
+            },
+            {
+                'neovim/nvim-lspconfig',
+                after = 'cmp-nvim-lsp',
+                config = function()
+                    require('config.lsp')
                 end,
             },
             {
@@ -215,8 +215,16 @@ return require('packer').startup({
             end,
         })
 
-        -- UI
-        use('stevearc/dressing.nvim')
+        use({
+            'folke/noice.nvim',
+            config = function()
+                require('config.noice')
+            end,
+            requires = {
+                'MunifTanjim/nui.nvim',
+                'rcarriga/nvim-notify',
+            },
+        })
 
         -- notification
         use({

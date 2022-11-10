@@ -2,9 +2,6 @@ local g = vim.g
 local o = vim.o
 
 g.mapleader = ' '
--- https://www.reddit.com/r/neovim/comments/rvwsl3/introducing_filetypelua_and_a_call_for_help/
-g.do_filetype_lua = 1
-g.did_load_filetypes = 0
 
 o.encoding = 'utf-8'
 o.fileencoding = 'utf-8'

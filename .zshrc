@@ -35,7 +35,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
-HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 
 # neovim
 export NVIM_DATA_HOME="$HOME/.local/share/nvim"
