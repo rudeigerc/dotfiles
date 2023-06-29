@@ -35,7 +35,7 @@
                     "to": [
                         {
                             "select_input_source": {
-                                "input_source_id": "^im\\.rime\\.inputmethod\\.Squirrel\\.Rime$"
+                                "input_source_id": "^im\\.rime\\.inputmethod\\.Squirrel\\.Hans$"
                             }
                         }
                     ]
