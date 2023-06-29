@@ -10,6 +10,7 @@ require('nvim-treesitter.configs').setup({
         'gitignore',
         'toml',
         'yaml',
+        'vim',
     },
     highlight = {
         enable = true,

@@ -72,8 +72,9 @@ function go_org_imports(wait_ms)
     end
 end
 
--- https://github.com/sumneko/lua-language-server/wiki/Configuration-File
-lspconfig.sumneko_lua.setup({
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#lua_ls
+-- https://github.com/LuaLS/lua-language-server/wiki/Configuration-File
+lspconfig.lua_ls.setup({
     on_attach = on_attach,
     settings = {
         Lua = {

@@ -1,3 +1,3 @@
-require('github-theme').setup({
-    theme_style = 'dimmed',
-})
+require('github-theme').setup({})
+
+vim.cmd('colorscheme github_dark_dimmed')

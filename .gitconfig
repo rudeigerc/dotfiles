@@ -33,12 +33,12 @@
 	remotebranch = 2 normal
 	nobranch = 1 normal italic
 	unmerged = 9 normal
-	untracked = normal dim
+	untracked = 8 normal
 [color "branch"]
-	plain = 5 normal dim
-	remote = 2 normal dim
-	current = 5 normal
-	local = 5 normal dim
+	plain = 5 normal
+	remote = 2 normal
+	current = 5 normal reverse
+	local = 5 normal
 	upstream = 2 normal
 [color "remote"]
 	hint = normal dim
@@ -52,32 +52,32 @@
 	error = 1 normal italic
 [color "diff"]
 	commit = 3 normal
-	newMoved = 14 normal
+	newMoved = 11 normal
 	oldMovedAlternativeDimmed = 4 normal dim
-	frag = 8 normal ul
-	oldMovedAlternative = 12 normal dim
+	frag = normal dim
+	oldMovedAlternative = 4 normal
 	contextBold = normal bold
 	newBold = 10 normal bold
 	context = normal
-	oldMoved = 14 normal dim
-	oldBold = 9 normal dim bold
-	newMovedDimmed = 6 normal
-	func = 8 normal ul
-	meta = 8 normal
-	newDimmed = 2 normal
+	oldMoved = 3 normal
+	oldBold = 1 normal bold
+	newMovedDimmed = 11 normal dim
+	func = 1 normal dim
+	meta = normal italic
+	newDimmed = 10 normal dim
 	newMovedAlternative = 12 normal
 	new = 10 normal
-	newMovedAlternativeDimmed = 4 normal
+	newMovedAlternativeDimmed = 12 normal dim
 	whitespace = normal 9
-	oldMovedDimmed = 6 normal dim
+	oldMovedDimmed = 3 normal dim
 	oldDimmed = 1 normal dim
-	old = 9 normal dim
+	old = 1 normal
 [color "decorate"]
 	branch = 5 normal
 	tag = 3 normal
 	remotebranch = 2 normal
 	stash = 8 normal
 	grafted = 1 normal italic
-	HEAD = 5 normal dim
+	HEAD = 5 normal italic
 [diff]
 	colorMoved = zebra

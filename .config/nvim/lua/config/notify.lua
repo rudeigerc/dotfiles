@@ -1,5 +1,7 @@
 -- https://github.com/rcarriga/nvim-notify/wiki/Usage-Recipes#progress-updates
-vim.notify = require('notify')
+vim.notify = require('notify').setup({
+    background_colour = '#000000',
+})
 
 local client_notifs = {}
 

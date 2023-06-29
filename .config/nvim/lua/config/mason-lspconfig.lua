@@ -1,6 +1,9 @@
 require('mason-lspconfig').setup({
     ensure_installed = {
         'gopls', -- Go
-        'sumneko_lua', -- Lua
+        'lua_ls', -- Lua
+        'pyright', -- Python
+        'taplo', -- TOML
+        'dockerls', -- Docker
     },
 })
