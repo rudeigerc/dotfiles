@@ -33,7 +33,7 @@
 	remotebranch = 2 normal
 	nobranch = 1 normal italic
 	unmerged = 9 normal
-	untracked = 8 normal
+	untracked = normal dim
 [color "branch"]
 	plain = 5 normal
 	remote = 2 normal
@@ -46,24 +46,24 @@
 	error = 1 normal
 	warning = 3 normal
 [color "interactive"]
-	header = 8 normal bold
+	header = normal dim bold
 	prompt = 15 4
-	help = 8 normal
+	help = normal dim
 	error = 1 normal italic
 [color "diff"]
 	commit = 3 normal
 	newMoved = 11 normal
 	oldMovedAlternativeDimmed = 4 normal dim
-	frag = normal dim
+	frag = normal italic
 	oldMovedAlternative = 4 normal
 	contextBold = normal bold
 	newBold = 10 normal bold
-	context = normal
+	context = normal dim
 	oldMoved = 3 normal
 	oldBold = 1 normal bold
 	newMovedDimmed = 11 normal dim
-	func = 1 normal dim
-	meta = normal italic
+	func = normal italic
+	meta = normal
 	newDimmed = 10 normal dim
 	newMovedAlternative = 12 normal
 	new = 10 normal
@@ -76,7 +76,7 @@
 	branch = 5 normal
 	tag = 3 normal
 	remotebranch = 2 normal
-	stash = 8 normal
+	stash = normal dim
 	grafted = 1 normal italic
 	HEAD = 5 normal italic
 [diff]

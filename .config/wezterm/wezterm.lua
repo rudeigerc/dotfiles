@@ -13,6 +13,7 @@ return {
     default_cursor_style = 'BlinkingBlock',
     default_cwd = wezterm.home_dir,
     use_ime = true,
+    window_close_confirmation = 'NeverPrompt',
     keys = {
         { key = 'LeftArrow', mods = 'SUPER', action = wezterm.action({ ActivateTabRelative = -1 }) },
         { key = 'RightArrow', mods = 'SUPER', action = wezterm.action({ ActivateTabRelative = 1 }) },

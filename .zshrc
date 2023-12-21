@@ -1,6 +1,17 @@
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+[ -f $HOME/.zsh_aliases ] && source $HOME/.zsh_aliases
+
+[ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# znap
 export ZNAP="$HOME/.zsh-snap"
 
 zstyle ':znap:*' repos-dir $ZNAP
+zstyle ':znap:*' git-maintenance off
 
 [[ -f $ZNAP/zsh-snap/znap.zsh ]] || git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git $ZNAP/zsh-snap
 
@@ -21,22 +32,23 @@ znap source zsh-users/zsh-completions
 
 znap eval zcolors "zcolors ${(q)LS_COLORS}"
 
+# tmux
 export TPM_HOME="$HOME/.config/tmux/plugins/tpm"
 [[ -f $TPM_HOME/tpm ]] || git clone --depth 1 -- https://github.com/tmux-plugins/tpm $TPM_HOME
 
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
 
-[ -f $HOME/.zsh_aliases ] && source $HOME/.zsh_aliases
+# Homebrew
+export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
 
-[ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
+# rustup
+export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
+export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# homebrew
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
-
-# neovim
+# nvim
 export NVIM_DATA_HOME="$HOME/.local/share/nvim"
 
 # go
@@ -50,11 +62,10 @@ export PATH="$HOME/go/bin:$PATH"
 export PATH="$(brew --prefix)/opt/openjdk/bin:$PATH"
 export JAVA_HOME="$(brew --prefix)/opt/openjdk/libexec/openjdk.jdk/Contents/Home"
 
-# openstackclient
-export OS_CLOUD=openstack
-
 # kubernetes
 export KUBE_EDITOR="nvim"
+
+# krew
 export PATH="${PATH}:${HOME}/.krew/bin"
 
 # GNU command line tools
@@ -75,16 +86,8 @@ source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/compl
 # riscv-gnu-toolchain
 export PATH="$(brew --prefix)/opt/riscv-gnu-toolchain/bin:$PATH"
 
-# apache-flink
-export FLINK_HOME="$(brew --prefix)/opt/apache-flink/libexec"
-export PATH="$FLINK_HOME/bin:$PATH"
-
 # haskell
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
-
-# argo
-source <(argo completion zsh)
-source <(argocd completion zsh)
 
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
@@ -98,14 +101,14 @@ export FZF_DEFAULT_OPTS='
   --color pointer:#BF616A,info:#4C566A,spinner:#4C566A,header:#4C566A,prompt:#81A1C1,marker:#EBCB8B
 '
 
-# wezterm
+# WezTerm
 export PATH="/Applications/WezTerm.app/Contents/MacOS:$PATH"
 
-# surge
+# Surge
 export PATH="/Applications/Surge.app/Contents/Applications:$PATH"
 
 # Squirrel
 export PATH="/Library/Input Methods/Squirrel.app/Contents/MacOS:$PATH"
 
-znap function _pip_completion pip 'eval "$( pip completion --zsh )"'
-compctl -K _pip_completion pip
+# pipx
+export PATH="$HOME/.local/bin:$PATH"

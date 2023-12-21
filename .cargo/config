@@ -1,10 +1,10 @@
 [source]
 
 [source.sjtug]
-registry = "https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index/"
+registry = "sparse+https://mirrors.sjtug.sjtu.edu.cn/crates.io-index/"
 
-[source.ustc]
-registry = "https://mirrors.ustc.edu.cn/crates.io-index"
+[source.tuna]
+registry = "sparse+https://mirrors.tuna.tsinghua.edu.cn/crates.io-index/"
 
 [source.crates-io]
-replace-with = "ustc"
+replace-with = "tuna"
