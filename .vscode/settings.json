@@ -1,12 +1,12 @@
 {
-    "files.associations": {
-        "ignore": "gitignore",
-        ".zsh_aliases": "shellscript"
-    },
-    "Lua.diagnostics.globals": [
-        "vim"
-    ],
-    "[lua]": {
-        "editor.formatOnSave": true
-    }
+  "files.associations": {
+    "ignore": "gitignore",
+    ".zsh_aliases": "shellscript"
+  },
+  "Lua.diagnostics.globals": [
+    "vim"
+  ],
+  "[lua]": {
+    "editor.formatOnSave": true
+  }
 }
