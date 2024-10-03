@@ -14,7 +14,6 @@ FILES=(
     .config/gh/config.yml
     .config/starship.toml
     .config/tmux/tmux.conf
-    .gnupg/gpg-agent.conf
     .hammerspoon/init.lua
     .m2/settings.xml
     .gitconfig

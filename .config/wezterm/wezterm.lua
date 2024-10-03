@@ -8,7 +8,7 @@ end)
 
 return {
     color_scheme = 'GitHub Dark Dimmed',
-    font = wezterm.font_with_fallback({ 'JetBrainsMono Nerd Font Mono', 'Source Han Sans SC' }),
+    font = wezterm.font_with_fallback({ 'MonaspiceNe Nerd Font Mono', 'Source Han Sans SC' }),
     font_size = 14.0,
     default_cursor_style = 'BlinkingBlock',
     default_cwd = wezterm.home_dir,

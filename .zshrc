@@ -1,12 +1,6 @@
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-[ -f $HOME/.zsh_aliases ] && source $HOME/.zsh_aliases
-
-[ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 # znap
 export ZNAP="$HOME/.zsh-snap"
 
@@ -24,13 +18,16 @@ znap source ohmyzsh/ohmyzsh lib/{directories,theme-and-appearance} plugins/{git,
 
 znap source agkozak/zsh-z
 znap source marlonrichert/zcolors
-znap source MohamedElashri/exa-zsh
 znap source rudeigerc/znotify
 znap source zdharma-continuum/fast-syntax-highlighting
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-completions
 
 znap eval zcolors "zcolors ${(q)LS_COLORS}"
+
+[ -f $HOME/.zsh_aliases ] && source $HOME/.zsh_aliases
+
+[ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
 
 # tmux
 export TPM_HOME="$HOME/.config/tmux/plugins/tpm"
@@ -80,21 +77,15 @@ export PATH="$(brew --prefix)/opt/make/libexec/gnubin:$PATH"
 export GUILE_TLS_CERTIFICATE_DIRECTORY="$(brew --prefix)/etc/gnutls/etc/gnutls"
 
 # gcloud
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-
-# riscv-gnu-toolchain
-export PATH="$(brew --prefix)/opt/riscv-gnu-toolchain/bin:$PATH"
-
-# haskell
-[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
+test -e "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" && source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+test -e "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" && source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(fzf --zsh)"
 
 export FZF_DEFAULT_OPTS='
   --color fg:#D8DEE9,bg:#2E3440,hl:#A3BE8C,fg+:#D8DEE9,bg+:#434C5E,hl+:#A3BE8C
@@ -106,9 +97,6 @@ export PATH="/Applications/WezTerm.app/Contents/MacOS:$PATH"
 
 # Surge
 export PATH="/Applications/Surge.app/Contents/Applications:$PATH"
-
-# Squirrel
-export PATH="/Library/Input Methods/Squirrel.app/Contents/MacOS:$PATH"
 
 # pipx
 export PATH="$HOME/.local/bin:$PATH"
