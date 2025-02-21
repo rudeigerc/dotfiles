@@ -33,6 +33,7 @@ echo "setup.sh: Setting up symbolic links for directories"
 DIRS=(
     .config/bat
     .config/git
+    .config/ghostty
     .config/karabiner/assets/complex_modifications
     .config/nvim
     .config/pip

@@ -92,9 +92,6 @@ export FZF_DEFAULT_OPTS='
   --color pointer:#BF616A,info:#4C566A,spinner:#4C566A,header:#4C566A,prompt:#81A1C1,marker:#EBCB8B
 '
 
-# WezTerm
-export PATH="/Applications/WezTerm.app/Contents/MacOS:$PATH"
-
 # Surge
 export PATH="/Applications/Surge.app/Contents/Applications:$PATH"
 
