@@ -29,10 +29,11 @@ znap eval zcolors "zcolors ${(q)LS_COLORS}"
 
 [ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # tmux
 export TPM_HOME="$HOME/.config/tmux/plugins/tpm"
 [[ -f $TPM_HOME/tpm ]] || git clone --depth 1 -- https://github.com/tmux-plugins/tpm $TPM_HOME
-
 
 # Homebrew
 export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
@@ -55,10 +56,6 @@ export GOPATH="$HOME/go"
 export GOPROXY=https://goproxy.cn,https://mirrors.aliyun.com/goproxy/,https://goproxy.io,direct
 export PATH="$HOME/go/bin:$PATH"
 
-# openjdk
-export PATH="$(brew --prefix)/opt/openjdk/bin:$PATH"
-export JAVA_HOME="$(brew --prefix)/opt/openjdk/libexec/openjdk.jdk/Contents/Home"
-
 # kubernetes
 export KUBE_EDITOR="nvim"
 
@@ -80,10 +77,6 @@ export GUILE_TLS_CERTIFICATE_DIRECTORY="$(brew --prefix)/etc/gnutls/etc/gnutls"
 test -e "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" && source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 test -e "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" && source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
-# pnpm
-export PNPM_HOME="$HOME/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-
 # fzf
 eval "$(fzf --zsh)"
 
@@ -95,5 +88,16 @@ export FZF_DEFAULT_OPTS='
 # Surge
 export PATH="/Applications/Surge.app/Contents/Applications:$PATH"
 
-# pipx
-export PATH="$HOME/.local/bin:$PATH"
+# volta
+export PATH="$HOME/.volta/bin:$PATH"
+
+# uv
+eval "$(uv generate-shell-completion zsh)"
+
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

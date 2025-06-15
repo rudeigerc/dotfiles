@@ -16,6 +16,7 @@ FILES=(
     .config/tmux/tmux.conf
     .hammerspoon/init.lua
     .m2/settings.xml
+    .volta/hooks.json
     .gitconfig
     .kubectl_aliases
     .npmrc
@@ -34,11 +35,10 @@ DIRS=(
     .config/bat
     .config/git
     .config/ghostty
-    .config/karabiner/assets/complex_modifications
     .config/nvim
     .config/pip
     .config/stylua
-    .config/wezterm
+    .config/uv
 )
 
 for DIR in "${DIRS[@]}"; do
